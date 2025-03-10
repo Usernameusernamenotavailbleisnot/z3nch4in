@@ -1,0 +1,75 @@
+{
+  "enable_transfer": true,
+  "enable_contract_deploy": true,
+  "gas_price_multiplier": 1.2,
+  "max_retries": 5,
+  "base_wait_time": 10,
+  "transfer_amount_percentage": 90,
+  "transfer_count": {
+    "min": 1,
+    "max": 3
+  },
+  "delay": {
+    "min_seconds": 1,
+    "max_seconds": 1
+  },
+  "operation_randomization": {
+    "enable_randomization": true,
+    "excluded_operations": ["faucet"],
+    "operations_to_run": ["faucet", "transfer", "contract_deploy", "contract_testing", "erc20", "nft", "batch_operations"]
+  },
+  "contract_testing": {
+    "enable_contract_testing": true,
+    "test_sequences": ["parameter_variation", "stress_test", "boundary_test"],
+    "iterations": {
+      "min": 2,
+      "max": 3
+    }
+  },
+  "batch_operations": {
+    "enable_batch_operations": true,
+    "operations_per_batch": {
+      "min": 2,
+      "max": 3
+    }
+  },
+  "contract": {
+    "contract_interactions": {
+      "enabled": true,
+      "count": {
+        "min": 3,
+        "max": 8
+      },
+      "types": ["setValue", "increment", "decrement", "reset", "contribute"]
+    }
+  },
+  "erc20": {
+    "enable_erc20": true,
+    "mint_amount": {
+      "min": 1000000,
+      "max": 10000000
+    },
+    "burn_percentage": 10,
+    "decimals": 18
+  },
+  "nft": {
+    "enable_nft": true,
+    "mint_count": {
+      "min": 2,
+      "max": 5
+    },
+    "burn_percentage": 20,
+    "supply": {
+      "min": 100,
+      "max": 500
+    }
+  },
+  "faucet": {
+    "enable_faucet": true,
+    "captcha_api_key": "",
+    "max_retries": 5,
+    "base_wait_time": 1,
+    "max_wait_time": 300000,
+    "check_interval": 5000
+  }
+}
