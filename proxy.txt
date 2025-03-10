@@ -1,0 +1,2 @@
+http://user:pw@ip:port1
+http://user:pw@ip:port2
